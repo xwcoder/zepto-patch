@@ -111,7 +111,7 @@
             sb.prototype.superClass = sp.prototype;
             
             overide = overide || {};
-            sohuHD.extend( sb.prototype, overide );
+            $.extend( sb.prototype, overide );
 
             if ( sp.prototype.constructor === Object.prototype.constructor ) {
                 sp.prototype.constructor = sp;
