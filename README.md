@@ -188,3 +188,11 @@ $ script/test
   [mkd]: http://github.github.com/github-flavored-markdown/
   [evidence.js]: https://github.com/tobie/Evidence
   [phantomjs]: http://code.google.com/p/phantomjs/wiki/Installation
+
+## PATCHES
+
+- patch.js  add patch.js
+- touch.js  remove *setTimeout* when fire tap/swipe/... event, because it doesn't trigger video top play on IOS
+            when the page has code *setInterval*
+- touch.js  add coordinate information to swipe event
+- touch.js  set touch={} when trigger none event
