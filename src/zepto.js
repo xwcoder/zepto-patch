@@ -479,9 +479,15 @@ var Zepto = (function() {
     },
     show: function(){
       return this.each(function(){
+        var _display;
         this.style.display == "none" && (this.style.display = null)
-        if (getComputedStyle(this, '').getPropertyValue("display") == "none")
-          this.style.display = defaultDisplay(this.nodeName)
+        if (getComputedStyle(this, '').getPropertyValue("display") == "none") {
+          if ( _display = $( this ).data( '_display' ) ) {
+            this.style.display = _display;
+          } else {
+            this.style.display = defaultDisplay(this.nodeName)
+          }
+        }
       })
     },
     replaceWith: function(newContent){
@@ -528,6 +534,15 @@ var Zepto = (function() {
       return this.map(function(){ return this.cloneNode(true) })
     },
     hide: function(){
+
+      this.each( function () {
+          var el = $( this );
+          var _display = el.css( 'display' );
+          if ( _display != 'none' ) {
+            el.data( '_display', _display );
+          }
+      } );
+
       return this.css("display", "none")
     },
     toggle: function(setting){

@@ -196,3 +196,4 @@ $ script/test
             when the page has code *setInterval*
 - touch.js  add coordinate information to swipe event
 - touch.js  set touch={} when trigger none event
+- zepto.js  save *display* to *_display* when hide, set display = _display when show
