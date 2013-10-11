@@ -38,7 +38,7 @@
                     return false;
                 }
             }
-            e.stopPropagation();
+            event.stopPropagation();
             //return false;
             return; 
         } );
